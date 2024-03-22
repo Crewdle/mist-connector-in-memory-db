@@ -1,0 +1,39 @@
+{
+  "name": "@crewdle/mist-connector-in-memory-db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build": "webpack build --mode=production && mv src/index.d.ts dist/index.d.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crewdle/mist-connector-in-memory.git"
+  },
+  "author": "Crewdle Technologies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Crewdle/mist-connector-in-memory/issues"
+  },
+  "homepage": "https://github.com/Crewdle/mist-connector-in-memory#readme",
+  "peerDependencies": {
+    "@crewdle/web-sdk": "^0.1.9"
+  },
+  "files": [
+    "dist/"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.11.27",
+    "@types/ws": "^8.5.10",
+    "node-datachannel": "^0.5.4",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.2",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "uuid": "^9.0.1"
+  }
+}
