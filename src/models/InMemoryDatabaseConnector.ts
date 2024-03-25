@@ -1,4 +1,4 @@
-import { IDatabaseLayout, IKeyValueDatabaseConnector, IKeyValueDatabaseMigrationHandle, IKeyValueDatabaseTableConnector, IValueType } from '@crewdle/web-sdk';
+import type { IDatabaseLayout, IKeyValueDatabaseConnector, IKeyValueDatabaseTableConnector, IValueType } from '@crewdle/web-sdk-types';
 import { InMemoryDatabaseTableConnector } from './InMemoryDatabaseTableConnector';
 
 /**
@@ -27,7 +27,7 @@ export class InMemoryDatabaseConnector implements IKeyValueDatabaseConnector {
    * @param migration The migration function.
    * @returns A promise that resolves when the database is open.
    */
-  async open(migration: (db: IKeyValueDatabaseMigrationHandle) => void): Promise<void> {
+  async open(): Promise<void> {
     this.tables = new Map();
     for (const tableName of Object.keys(this.layout)) {
       this.tables.set(tableName, new InMemoryDatabaseTableConnector());

@@ -1,4 +1,4 @@
-import { IDatabaseTableQuery, IValueType } from '@crewdle/web-sdk';
+import type { IDatabaseTableQuery, IValueType } from '@crewdle/web-sdk-types';
 
 export function orderValues<T extends IValueType>(values: T[], query?: IDatabaseTableQuery): void {
   if (query?.orderBy) {

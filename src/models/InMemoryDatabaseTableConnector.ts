@@ -1,7 +1,7 @@
 import { v4 } from 'uuid';
 
-import { IDatabaseTableQuery, IKeyValueDatabaseTableConnector, IValueType, ValueTypeOmitId } from '@crewdle/web-sdk';
-import { isMatchingQuery, orderValues } from './helpers';
+import { IDatabaseTableQuery, IKeyValueDatabaseTableConnector, IValueType, ValueTypeOmitId } from '@crewdle/web-sdk-types';
+import { isMatchingQuery, orderValues } from '../helpers/helpers';
 
 /**
  * The in-memory database table connector.

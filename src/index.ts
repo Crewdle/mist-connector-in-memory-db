@@ -1,2 +1,2 @@
-export { InMemoryDatabaseConnector } from './InMemoryDatabaseConnector';
-export { InMemoryDatabaseTableConnector } from './InMemoryDatabaseTableConnector';
+export { InMemoryDatabaseConnector } from './models/InMemoryDatabaseConnector';
+export { InMemoryDatabaseTableConnector } from './models/InMemoryDatabaseTableConnector';

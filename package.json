@@ -17,14 +17,13 @@
     "url": "https://github.com/Crewdle/mist-connector-in-memory-db/issues"
   },
   "homepage": "https://github.com/Crewdle/mist-connector-in-memory-db#readme",
-  "peerDependencies": {
-    "@crewdle/web-sdk": "^0.1.9"
-  },
   "files": [
     "dist/"
   ],
   "devDependencies": {
+    "@crewdle/web-sdk-types": "^1.0.0",
     "@types/node": "^20.11.27",
+    "@types/uuid": "^9.0.8",
     "ts-loader": "^9.5.1",
     "typescript": "^5.4.2",
     "webpack": "^5.90.3",
