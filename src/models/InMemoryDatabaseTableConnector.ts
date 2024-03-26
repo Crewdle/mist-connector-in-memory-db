@@ -5,7 +5,6 @@ import { isMatchingQuery, orderValues } from '../helpers/helpers';
 
 /**
  * The in-memory database table connector.
- * @category Connector
  */
 export class InMemoryDatabaseTableConnector<T extends IValueType> implements IKeyValueDatabaseTableConnector<T> {
   /**

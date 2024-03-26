@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "build": "webpack build --mode=production && mv src/index.d.ts dist/index.d.ts"
+    "build": "webpack build --mode=production"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,9 @@
     "url": "https://github.com/Crewdle/mist-connector-in-memory-db/issues"
   },
   "homepage": "https://github.com/Crewdle/mist-connector-in-memory-db#readme",
-  "files": [
-    "dist/"
-  ],
+  "dependencies": {
+    "uuid": "^9.0.1"
+  },
   "devDependencies": {
     "@crewdle/web-sdk-types": "^1.0.0",
     "@types/node": "^20.11.27",
@@ -30,7 +30,7 @@
     "webpack-cli": "^5.1.4",
     "webpack-node-externals": "^3.0.0"
   },
-  "dependencies": {
-    "uuid": "^9.0.1"
-  }
+  "files": [
+    "dist/"
+  ]
 }

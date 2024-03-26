@@ -3,7 +3,6 @@ import { InMemoryDatabaseTableConnector } from './InMemoryDatabaseTableConnector
 
 /**
  * The in-memory database connector.
- * @category Connector
  */
 export class InMemoryDatabaseConnector implements IKeyValueDatabaseConnector {
   /**
