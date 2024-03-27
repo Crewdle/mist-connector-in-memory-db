@@ -1,7 +1,6 @@
 import { IDatabaseTableQuery, IKeyValueDatabaseTableConnector, IValueType, ValueTypeOmitId } from '@crewdle/web-sdk-types';
 /**
  * The in-memory database table connector.
- * @category Connector
  */
 export declare class InMemoryDatabaseTableConnector<T extends IValueType> implements IKeyValueDatabaseTableConnector<T> {
     /**

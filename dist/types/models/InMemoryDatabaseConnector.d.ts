@@ -1,7 +1,6 @@
 import type { IDatabaseLayout, IKeyValueDatabaseConnector, IKeyValueDatabaseTableConnector, IValueType } from '@crewdle/web-sdk-types';
 /**
  * The in-memory database connector.
- * @category Connector
  */
 export declare class InMemoryDatabaseConnector implements IKeyValueDatabaseConnector {
     private readonly dbKey;

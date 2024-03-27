@@ -1,1 +1,445 @@
-(()=>{"use strict";var e={851:(e,t)=>{Object.defineProperty(t,"__esModule",{value:!0}),t.isMatchingQuery=t.orderValues=void 0,t.orderValues=function(e,t){(null==t?void 0:t.orderBy)&&e.sort((function(e,r){return e[t.orderBy.key]<r[t.orderBy.key]&&"desc"===t.orderBy.direction||e[t.orderBy.key]>r[t.orderBy.key]&&"asc"===t.orderBy.direction?-1:e[t.orderBy.key]>r[t.orderBy.key]&&"desc"===t.orderBy.direction||e[t.orderBy.key]<r[t.orderBy.key]&&"asc"===t.orderBy.direction?1:0}))},t.isMatchingQuery=function(e,t){if(null==t?void 0:t.where){var r=e;switch(t.where.operator){case"==":if(r[t.where.key]===t.where.value)return!0;break;case"!=":if(r[t.where.key]!==t.where.value)return!0;break;case"<":if(r[t.where.key]<t.where.value)return!0;break;case"<=":if(r[t.where.key]<=t.where.value)return!0;break;case">":if(r[t.where.key]>t.where.value)return!0;break;case">=":if(r[t.where.key]>=t.where.value)return!0;break;case"between":if(r[t.where.key]>=t.where.value[0]&&r[t.where.key]<=t.where.value[1])return!0;break;case"in":if(t.where.value.includes(r[t.where.key]))return!0;break;case"not-in":if(!t.where.value.includes(r[t.where.key]))return!0}return!1}return!0}},835:function(e,t,r){var n=this&&this.__awaiter||function(e,t,r,n){return new(r||(r=Promise))((function(o,i){function a(e){try{s(n.next(e))}catch(e){i(e)}}function u(e){try{s(n.throw(e))}catch(e){i(e)}}function s(e){var t;e.done?o(e.value):(t=e.value,t instanceof r?t:new r((function(e){e(t)}))).then(a,u)}s((n=n.apply(e,t||[])).next())}))},o=this&&this.__generator||function(e,t){var r,n,o,i,a={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return i={next:u(0),throw:u(1),return:u(2)},"function"==typeof Symbol&&(i[Symbol.iterator]=function(){return this}),i;function u(u){return function(s){return function(u){if(r)throw new TypeError("Generator is already executing.");for(;i&&(i=0,u[0]&&(a=0)),a;)try{if(r=1,n&&(o=2&u[0]?n.return:u[0]?n.throw||((o=n.return)&&o.call(n),0):n.next)&&!(o=o.call(n,u[1])).done)return o;switch(n=0,o&&(u=[2&u[0],o.value]),u[0]){case 0:case 1:o=u;break;case 4:return a.label++,{value:u[1],done:!1};case 5:a.label++,n=u[1],u=[0];continue;case 7:u=a.ops.pop(),a.trys.pop();continue;default:if(!((o=(o=a.trys).length>0&&o[o.length-1])||6!==u[0]&&2!==u[0])){a=0;continue}if(3===u[0]&&(!o||u[1]>o[0]&&u[1]<o[3])){a.label=u[1];break}if(6===u[0]&&a.label<o[1]){a.label=o[1],o=u;break}if(o&&a.label<o[2]){a.label=o[2],a.ops.push(u);break}o[2]&&a.ops.pop(),a.trys.pop();continue}u=t.call(e,a)}catch(e){u=[6,e],n=0}finally{r=o=0}if(5&u[0])throw u[1];return{value:u[0]?u[1]:void 0,done:!0}}([u,s])}}};Object.defineProperty(t,"__esModule",{value:!0}),t.InMemoryDatabaseConnector=void 0;var i=r(917),a=function(){function e(e,t){this.dbKey=e,this.layout=t}return e.prototype.open=function(){return n(this,void 0,void 0,(function(){var e,t,r;return o(this,(function(n){for(this.tables=new Map,e=0,t=Object.keys(this.layout);e<t.length;e++)r=t[e],this.tables.set(r,new i.InMemoryDatabaseTableConnector);return[2]}))}))},e.prototype.close=function(){this.tables=void 0},e.prototype.hasTable=function(e){var t,r;return null!==(r=null===(t=this.tables)||void 0===t?void 0:t.has(e))&&void 0!==r&&r},e.prototype.createTable=function(e){if(!this.tables)throw new Error("Database not open");if(this.tables.has(e))throw new Error("Table already exists");this.tables.set(e,new i.InMemoryDatabaseTableConnector)},e.prototype.getTableConnector=function(e){if(!this.tables)throw new Error("Database not open");this.tables.has(e)||this.tables.set(e,new i.InMemoryDatabaseTableConnector);var t=this.tables.get(e);if(!t)throw new Error("Table not found");return t},e}();t.InMemoryDatabaseConnector=a},917:function(e,t,r){var n=this&&this.__assign||function(){return n=Object.assign||function(e){for(var t,r=1,n=arguments.length;r<n;r++)for(var o in t=arguments[r])Object.prototype.hasOwnProperty.call(t,o)&&(e[o]=t[o]);return e},n.apply(this,arguments)},o=this&&this.__awaiter||function(e,t,r,n){return new(r||(r=Promise))((function(o,i){function a(e){try{s(n.next(e))}catch(e){i(e)}}function u(e){try{s(n.throw(e))}catch(e){i(e)}}function s(e){var t;e.done?o(e.value):(t=e.value,t instanceof r?t:new r((function(e){e(t)}))).then(a,u)}s((n=n.apply(e,t||[])).next())}))},i=this&&this.__generator||function(e,t){var r,n,o,i,a={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return i={next:u(0),throw:u(1),return:u(2)},"function"==typeof Symbol&&(i[Symbol.iterator]=function(){return this}),i;function u(u){return function(s){return function(u){if(r)throw new TypeError("Generator is already executing.");for(;i&&(i=0,u[0]&&(a=0)),a;)try{if(r=1,n&&(o=2&u[0]?n.return:u[0]?n.throw||((o=n.return)&&o.call(n),0):n.next)&&!(o=o.call(n,u[1])).done)return o;switch(n=0,o&&(u=[2&u[0],o.value]),u[0]){case 0:case 1:o=u;break;case 4:return a.label++,{value:u[1],done:!1};case 5:a.label++,n=u[1],u=[0];continue;case 7:u=a.ops.pop(),a.trys.pop();continue;default:if(!((o=(o=a.trys).length>0&&o[o.length-1])||6!==u[0]&&2!==u[0])){a=0;continue}if(3===u[0]&&(!o||u[1]>o[0]&&u[1]<o[3])){a.label=u[1];break}if(6===u[0]&&a.label<o[1]){a.label=o[1],o=u;break}if(o&&a.label<o[2]){a.label=o[2],a.ops.push(u);break}o[2]&&a.ops.pop(),a.trys.pop();continue}u=t.call(e,a)}catch(e){u=[6,e],n=0}finally{r=o=0}if(5&u[0])throw u[1];return{value:u[0]?u[1]:void 0,done:!0}}([u,s])}}};Object.defineProperty(t,"__esModule",{value:!0}),t.InMemoryDatabaseTableConnector=void 0;var a=r(903),u=r(851),s=function(){function e(){this.store=new Map}return e.prototype.get=function(e){return o(this,void 0,void 0,(function(){return i(this,(function(t){return[2,this.store.get(e)]}))}))},e.prototype.set=function(e,t){return o(this,void 0,void 0,(function(){var r;return i(this,(function(o){return r=n(n({},t),{id:e}),this.store.set(e,r),[2,r]}))}))},e.prototype.add=function(e){return o(this,void 0,void 0,(function(){var t,r;return i(this,(function(o){return t=(0,a.v4)(),r=n(n({},e),{id:t}),this.store.set(t,r),[2,r]}))}))},e.prototype.delete=function(e){return o(this,void 0,void 0,(function(){return i(this,(function(t){return this.store.delete(e),[2]}))}))},e.prototype.clear=function(){return o(this,void 0,void 0,(function(){return i(this,(function(e){return this.store.clear(),[2]}))}))},e.prototype.list=function(e){return o(this,void 0,void 0,(function(){var t,r,n,o,a;return i(this,(function(i){if(t=Array.from(this.store.values()),!e)return[2,t];for((0,u.orderValues)(t,e),r=[],n=0,o=Array.from(this.store.values());n<o.length;n++){if(a=o[n],(0,u.isMatchingQuery)(a,e)){if(e.offset&&r.length<e.offset)continue;r.push(a)}if(e.limit&&r.length>=e.limit)break}return[2,r]}))}))},e.prototype.count=function(e){return o(this,void 0,void 0,(function(){var t,r,n,o;return i(this,(function(i){if(!e)return[2,this.store.size];for(t=0,r=0,n=Array.from(this.store.values());r<n.length;r++)o=n[r],(0,u.isMatchingQuery)(o,e)&&(t+=1);return[2,t]}))}))},e.prototype.calculateSize=function(){return o(this,void 0,void 0,(function(){var e,t,r,n,o;return i(this,(function(i){for(e=0,t=0,r=Array.from(this.store.values());t<r.length;t++)n=r[t],o=new Blob([JSON.stringify(n)]).size,e+=o;return[2,e]}))}))},e}();t.InMemoryDatabaseTableConnector=s},903:e=>{e.exports=require("uuid")}},t={};function r(n){var o=t[n];if(void 0!==o)return o.exports;var i=t[n]={exports:{}};return e[n].call(i.exports,i,i.exports,r),i.exports}r(835),r(917)})();
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(global, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  InMemoryDatabaseConnector: () => (/* reexport */ InMemoryDatabaseConnector),
+  InMemoryDatabaseTableConnector: () => (/* reexport */ InMemoryDatabaseTableConnector)
+});
+
+;// CONCATENATED MODULE: external "crypto"
+const external_crypto_namespaceObject = require("crypto");
+var external_crypto_default = /*#__PURE__*/__webpack_require__.n(external_crypto_namespaceObject);
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-node/native.js
+
+/* harmony default export */ const esm_node_native = ({
+  randomUUID: (external_crypto_default()).randomUUID
+});
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-node/rng.js
+
+const rnds8Pool = new Uint8Array(256); // # of random values to pre-allocate
+
+let poolPtr = rnds8Pool.length;
+function rng() {
+  if (poolPtr > rnds8Pool.length - 16) {
+    external_crypto_default().randomFillSync(rnds8Pool);
+    poolPtr = 0;
+  }
+
+  return rnds8Pool.slice(poolPtr, poolPtr += 16);
+}
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-node/stringify.js
+
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+
+const byteToHex = [];
+
+for (let i = 0; i < 256; ++i) {
+  byteToHex.push((i + 0x100).toString(16).slice(1));
+}
+
+function unsafeStringify(arr, offset = 0) {
+  // Note: Be careful editing this code!  It's been tuned for performance
+  // and works in ways you may not expect. See https://github.com/uuidjs/uuid/pull/434
+  return byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + '-' + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + '-' + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + '-' + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + '-' + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]];
+}
+
+function stringify(arr, offset = 0) {
+  const uuid = unsafeStringify(arr, offset); // Consistency check for valid UUID.  If this throws, it's likely due to one
+  // of the following:
+  // - One or more input array values don't map to a hex octet (leading to
+  // "undefined" in the uuid)
+  // - Invalid input values for the RFC `version` or `variant` fields
+
+  if (!validate(uuid)) {
+    throw TypeError('Stringified UUID is invalid');
+  }
+
+  return uuid;
+}
+
+/* harmony default export */ const esm_node_stringify = ((/* unused pure expression or super */ null && (stringify)));
+;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-node/v4.js
+
+
+
+
+function v4(options, buf, offset) {
+  if (esm_node_native.randomUUID && !buf && !options) {
+    return esm_node_native.randomUUID();
+  }
+
+  options = options || {};
+  const rnds = options.random || (options.rng || rng)(); // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+
+  rnds[6] = rnds[6] & 0x0f | 0x40;
+  rnds[8] = rnds[8] & 0x3f | 0x80; // Copy bytes to buffer, if provided
+
+  if (buf) {
+    offset = offset || 0;
+
+    for (let i = 0; i < 16; ++i) {
+      buf[offset + i] = rnds[i];
+    }
+
+    return buf;
+  }
+
+  return unsafeStringify(rnds);
+}
+
+/* harmony default export */ const esm_node_v4 = (v4);
+;// CONCATENATED MODULE: ./src/helpers/helpers.ts
+/**
+ * Orders the values based on the query
+ * @param values The values to order
+ * @param query The query
+ * @ignore
+ */
+function orderValues(values, query) {
+    if (query?.orderBy) {
+        values.sort((a, b) => {
+            if (a[query.orderBy.key] < b[query.orderBy.key] && query.orderBy.direction === 'desc' ||
+                a[query.orderBy.key] > b[query.orderBy.key] && query.orderBy.direction === 'asc') {
+                return -1;
+            }
+            else if (a[query.orderBy.key] > b[query.orderBy.key] && query.orderBy.direction === 'desc' ||
+                a[query.orderBy.key] < b[query.orderBy.key] && query.orderBy.direction === 'asc') {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        });
+    }
+}
+/**
+ * Checks if the value matches the query
+ * @param value The value to check
+ * @param query The query
+ * @returns True if the value matches the query
+ * @ignore
+ */
+function isMatchingQuery(value, query) {
+    if (query?.where) {
+        const anyValue = value;
+        switch (query.where.operator) {
+            case '==':
+                if (anyValue[query.where.key] === query.where.value) {
+                    return true;
+                }
+                break;
+            case '!=':
+                if (anyValue[query.where.key] !== query.where.value) {
+                    return true;
+                }
+                break;
+            case '<':
+                if (anyValue[query.where.key] < query.where.value) {
+                    return true;
+                }
+                break;
+            case '<=':
+                if (anyValue[query.where.key] <= query.where.value) {
+                    return true;
+                }
+                break;
+            case '>':
+                if (anyValue[query.where.key] > query.where.value) {
+                    return true;
+                }
+                break;
+            case '>=':
+                if (anyValue[query.where.key] >= query.where.value) {
+                    return true;
+                }
+                break;
+            case 'between':
+                if (anyValue[query.where.key] >= query.where.value[0] && anyValue[query.where.key] <= query.where.value[1]) {
+                    return true;
+                }
+                break;
+            case 'in':
+                if (query.where.value.includes(anyValue[query.where.key])) {
+                    return true;
+                }
+                break;
+            case 'not-in':
+                if (!query.where.value.includes(anyValue[query.where.key])) {
+                    return true;
+                }
+                break;
+        }
+        return false;
+    }
+    return true;
+}
+
+;// CONCATENATED MODULE: ./src/models/InMemoryDatabaseTableConnector.ts
+
+
+/**
+ * The in-memory database table connector.
+ */
+class InMemoryDatabaseTableConnector {
+    /**
+     * The store.
+     * @ignore
+     */
+    store = new Map();
+    /**
+     * Get a value.
+     * @param key The key.
+     * @returns A promise that resolves with the value or undefined if the value does not exist.
+     */
+    async get(key) {
+        return this.store.get(key);
+    }
+    /**
+     * Set a value.
+     * @param key The key.
+     * @param value The value.
+     * @returns A promise that resolves with the value.
+     */
+    async set(key, value) {
+        const valueWithId = {
+            ...value,
+            id: key,
+        };
+        this.store.set(key, valueWithId);
+        return valueWithId;
+    }
+    /**
+     * Add a value. The value will be assigned a new key.
+     * @param value The value.
+     * @returns A promise that resolves with the value.
+     */
+    async add(value) {
+        const key = esm_node_v4();
+        const valueWithId = {
+            ...value,
+            id: key,
+        };
+        this.store.set(key, valueWithId);
+        return valueWithId;
+    }
+    /**
+     * Delete a value.
+     * @param key The key.
+     * @returns A promise that resolves when the value is deleted.
+     */
+    async delete(key) {
+        this.store.delete(key);
+    }
+    /**
+     * Clear all values.
+     * @returns A promise that resolves when all values are cleared.
+     */
+    async clear() {
+        this.store.clear();
+    }
+    /**
+     * List values.
+     * @param query The query.
+     * @returns A promise that resolves with the values.
+     */
+    async list(query) {
+        const values = Array.from(this.store.values());
+        if (!query) {
+            return values;
+        }
+        orderValues(values, query);
+        const result = [];
+        for (const value of Array.from(this.store.values())) {
+            if (isMatchingQuery(value, query)) {
+                if (query.offset && result.length < query.offset) {
+                    continue;
+                }
+                result.push(value);
+            }
+            if (query.limit && result.length >= query.limit) {
+                break;
+            }
+        }
+        return result;
+    }
+    /**
+     * Count values.
+     * @param query The query.
+     * @returns A promise that resolves with the count.
+     */
+    async count(query) {
+        if (!query) {
+            return this.store.size;
+        }
+        let count = 0;
+        for (const value of Array.from(this.store.values())) {
+            if (isMatchingQuery(value, query)) {
+                count += 1;
+            }
+        }
+        return count;
+    }
+    /**
+     * Calculate the size of all values.
+     * @returns A promise that resolves with the size.
+     */
+    async calculateSize() {
+        let size = 0;
+        for (const value of Array.from(this.store.values())) {
+            const objectSize = new Blob([JSON.stringify(value)]).size;
+            size += objectSize;
+        }
+        return size;
+    }
+}
+
+;// CONCATENATED MODULE: ./src/models/InMemoryDatabaseConnector.ts
+
+/**
+ * The in-memory database connector.
+ */
+class InMemoryDatabaseConnector {
+    dbKey;
+    layout;
+    /**
+     * The tables.
+     * @ignore
+     */
+    tables;
+    /**
+     * The constructor.
+     * @param dbKey The database key.
+     * @param layout The database layout.
+     */
+    constructor(dbKey, layout) {
+        this.dbKey = dbKey;
+        this.layout = layout;
+    }
+    /**
+     * Open the database.
+     * @param migration The migration function.
+     * @returns A promise that resolves when the database is open.
+     */
+    async open() {
+        this.tables = new Map();
+        for (const tableName of Object.keys(this.layout)) {
+            this.tables.set(tableName, new InMemoryDatabaseTableConnector());
+        }
+    }
+    /**
+     * Close the database.
+     */
+    close() {
+        this.tables = undefined;
+    }
+    /**
+     * Check if the database has a table.
+     * @param tableName The table name.
+     * @returns True if the database has the table.
+     */
+    hasTable(tableName) {
+        return this.tables?.has(tableName) ?? false;
+    }
+    /**
+     * Create a table.
+     * @param tableName The table name.
+     */
+    createTable(tableName) {
+        if (!this.tables) {
+            throw new Error('Database not open');
+        }
+        if (this.tables.has(tableName)) {
+            throw new Error('Table already exists');
+        }
+        this.tables.set(tableName, new InMemoryDatabaseTableConnector());
+    }
+    /**
+     * Get a table connector.
+     * @param tableName The table name.
+     * @returns The table connector.
+     */
+    getTableConnector(tableName) {
+        if (!this.tables) {
+            throw new Error('Database not open');
+        }
+        if (!this.tables.has(tableName)) {
+            this.tables.set(tableName, new InMemoryDatabaseTableConnector());
+        }
+        const table = this.tables.get(tableName);
+        if (!table) {
+            throw new Error('Table not found');
+        }
+        return table;
+    }
+}
+
+;// CONCATENATED MODULE: ./src/index.ts
+
+
+
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
+});
