@@ -1,11 +1,11 @@
 {
   "name": "@crewdle/mist-connector-in-memory-db",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Crewdle Mist connector to use an in-memory Key-Value Database",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "build": "webpack build --mode=production"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -21,13 +21,10 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@crewdle/web-sdk-types": "^1.0.0",
+    "@crewdle/web-sdk-types": "^1.0.7",
     "@types/node": "^20.11.27",
     "@types/uuid": "^9.0.8",
-    "ts-loader": "^9.5.1",
-    "typescript": "^5.4.2",
-    "webpack": "^5.90.3",
-    "webpack-cli": "^5.1.4"
+    "typescript": "^5.4.2"
   },
   "files": [
     "dist/"
