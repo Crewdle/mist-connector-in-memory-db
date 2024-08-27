@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.isMatchingQuery = exports.orderValues = void 0;
+exports.orderValues = orderValues;
+exports.isMatchingQuery = isMatchingQuery;
 /**
  * Orders the values based on the query
  * @param values The values to order
@@ -24,7 +25,6 @@ function orderValues(values, query) {
         });
     }
 }
-exports.orderValues = orderValues;
 /**
  * Checks if the value matches the query
  * @param value The value to check
@@ -86,4 +86,3 @@ function isMatchingQuery(value, query) {
     }
     return true;
 }
-exports.isMatchingQuery = isMatchingQuery;
