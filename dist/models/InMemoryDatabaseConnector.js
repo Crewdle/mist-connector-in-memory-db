@@ -32,7 +32,7 @@ class InMemoryDatabaseConnector {
     open() {
         return __awaiter(this, void 0, void 0, function* () {
             this.tables = new Map();
-            for (const tableName of Object.keys(this.layout)) {
+            for (const tableName of Object.keys(this.layout.tables)) {
                 this.tables.set(tableName, new InMemoryDatabaseTableConnector_1.InMemoryDatabaseTableConnector());
             }
         });

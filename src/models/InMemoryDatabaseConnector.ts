@@ -28,7 +28,7 @@ export class InMemoryDatabaseConnector implements IKeyValueDatabaseConnector {
    */
   async open(): Promise<void> {
     this.tables = new Map();
-    for (const tableName of Object.keys(this.layout)) {
+    for (const tableName of Object.keys(this.layout.tables)) {
       this.tables.set(tableName, new InMemoryDatabaseTableConnector());
     }
   }

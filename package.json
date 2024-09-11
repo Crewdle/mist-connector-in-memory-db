@@ -1,6 +1,6 @@
 {
   "name": "@crewdle/mist-connector-in-memory-db",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Crewdle Mist connector to use an in-memory Key-Value Database",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
